@@ -5,16 +5,12 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'AtiStyle'
+gem 'atistyle', git: 'http://git.seplan.to.gov.br/jakson.moura/atistyle.git'
 ```
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install AtiStyle
 
 Rails generator
     $ rails g ati_style:install
@@ -22,10 +18,4 @@ Rails generator
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jaksonmoura/AtiStyle.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+Bug reports and pull requests are welcome on GitHub at http://git.seplan.to.gov.br/jakson.moura/atistyle.
