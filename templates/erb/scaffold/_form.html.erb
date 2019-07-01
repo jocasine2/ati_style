@@ -13,6 +13,7 @@
 <div class="card-panel">
   
 <% attributes.each do |attribute| -%>
+<div class="row">
   <div class="input-field">
 <% if attribute.password_digest? -%>
     <%%= f.label :password %>
@@ -31,10 +32,14 @@
     <% end %>
 <% end -%>
   </div>
+  </div>
 
 <% end -%>
 </div>
-  <div class="actions">
-    <%%= f.submit "Salvar", class:"btn" %>
-  </div>
+  <div class="row">
+              <div class="input-field col s12">
+                <button class="btn verde-to waves-effect waves-light right" type="submit" name="action">Salvar
+                </button>
+              </div>
+            </div>
 <%% end %>
