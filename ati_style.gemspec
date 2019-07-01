@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'AtiStyle/version'
+require 'ati_style/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "AtiStyle"
+  spec.name          = "ati_style"
   spec.version       = AtiStyle::VERSION
   spec.authors       = ["Jakson Moura"]
   spec.email         = ["jrochelly@gmail.com"]
 
   spec.summary       = %q{}
   spec.description   = %q{}
-  spec.homepage      = "https://github.com/jaksonmoura/AtiStyle"
+  spec.homepage      = "http://git.seplan.to.gov.br/jakson.moura/ati_style"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
