@@ -5,7 +5,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ati_style', git: 'git@git.seplan.to.gov.br:jakson.moura/atistyle.git'
+gem 'ati_style', git: 'git@git.seplan.to.gov.br:jakson.moura/ati_style.git'
 ```
 
 And then execute:
@@ -18,4 +18,4 @@ Rails generator
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at http://git.seplan.to.gov.br/jakson.moura/atistyle.
+Bug reports and pull requests are welcome on GitHub at http://git.seplan.to.gov.br/jakson.moura/ati_style.
