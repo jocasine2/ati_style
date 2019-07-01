@@ -5,7 +5,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ati_style', git: 'git@git.seplan.to.gov.br:jakson.moura/ati_style.git'
+gem 'ati_style', git: 'http://git.seplan.to.gov.br/jakson.moura/ati_style.git'
 ```
 
 And then execute:
