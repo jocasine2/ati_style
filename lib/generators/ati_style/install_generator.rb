@@ -6,7 +6,7 @@ module AtiStyle
       def copy_views
         directory 'app/', 'app/'
         directory 'public/', 'public/'
-        directory 'templates/', 'templates/'
+        directory 'templates/', 'lib/templates/'
       end
 
     end

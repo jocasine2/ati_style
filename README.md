@@ -1,16 +1,21 @@
 # AtiStyle
 
-## Installation
+## Instalação
 
-Add this line to your application's Gemfile:
+Adicione esta linha no Gemfile:
 
 ```ruby
 gem 'ati_style', git: 'http://git.seplan.to.gov.br/jakson.moura/ati_style.git'
 ```
 
-And then execute:
+Execute:
 
     $ bundle
+
+Configure o root_path da aplicação em routes:
+```ruby
+root to: 'controller#action'
+```
 
 Rails generator
     $ rails g ati_style:install
