@@ -1,24 +1,24 @@
-<% title "<%= singular_table_name.capitalize %>" %>
-<% content_for :page_actions do %>
+<%% title "<%= singular_table_name.capitalize %>" %>
+<%% content_for :page_actions do %>
 <a class="btn red darken-2 waves-effect waves-light breadcrumbs-btn right ml-1 sw-delete" title="Excluir item">
   <i class="material-icons">delete</i>
 </a>
-<a  href="<%= url_for edit_<%= singular_table_name %>_path %>" class="btn azul-to waves-effect waves-light breadcrumbs-btn right">
+<a  href="<%%= url_for edit_<%= singular_table_name %>_path %>" class="btn azul-to waves-effect waves-light breadcrumbs-btn right">
   <i class="material-icons right">edit</i>Editar <%= singular_table_name %>
 </a>
-<% end %>
+<%% end %>
 
 <div class="card-panel">
 	
-<% attributes.reject(&:password_digest?).each do |attribute| -%>
+<%% attributes.reject(&:password_digest?).each do |attribute| -%>
 <div class="col s12">
-  <label><%= attribute.human_name %>:</label>
-  <p><%%= @<%= singular_table_name %>.<%= attribute.name %> %></p>
+  <label><%%= attribute.human_name %>:</label>
+  <p><%%= @<%= singular_table_name %>.<%%= attribute.name %> %></p>
 </div>
-<% end -%>
+<%% end -%>
 </div>
 
-<% content_for :footer do %>
+<%% content_for :footer do %>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <!-- polyfill for ES6 Promises for IE11 and Android browser -->
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
@@ -56,4 +56,4 @@
     })
   });
 </script>
-<% end %>
+<%% end %>
