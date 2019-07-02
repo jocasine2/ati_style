@@ -19,6 +19,10 @@ module AtiStyle
         Dir.open(path).each do |f|
           File.rename(f, "#{f}.tt")
         end
+        path = 'lib/templates/rails/scaffold_controller'
+        Dir.open(path).each do |f|
+          File.rename(f, "#{f}.tt")
+        end
       end
 
     end

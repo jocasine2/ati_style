@@ -12,9 +12,10 @@ module AtiStyle
 
         # Rename template files addin .tt
         puts "Difinindo arquivos templates scaffold...\n"
-        path = 'lib/templates/'
+        path = "/Users/jaksonrochelly/Projetos/atistyle/t1/erb/scaffold"
         Dir.open(path).each do |f|
-          File.rename(f, "#{f}.tt")
+            puts f
+           File.rename(path +"/"+f, path +"/#{f}.tt")
         end
       end
 
