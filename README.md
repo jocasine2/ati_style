@@ -1,4 +1,6 @@
 # AtiStyle
+By: Jakson Moura
+With help of: João Victor
 
 ## Instalação
 

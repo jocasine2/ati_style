@@ -10,12 +10,12 @@
 
 <div class="card-panel">
 	
-<%% attributes.reject(&:password_digest?).each do |attribute| -%>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
 <div class="col s12">
-  <label><%%= attribute.human_name %>:</label>
-  <p><%%= @<%= singular_table_name %>.<%%= attribute.name %> %></p>
+  <label><%= attribute.human_name %>:</label>
+  <p><%%= @<%= singular_table_name %>.<%= attribute.name %> %></p>
 </div>
-<%% end -%>
+<% end -%>
 </div>
 
 <%% content_for :footer do %>

@@ -1,6 +1,15 @@
-<%%= form_with(model: <%= model_resource_name %>) do |f| %>
-  <%%= render "error_messages", resource: f.object %>
+<%%= form_for(<%= singular_table_name %>) do |f| %>
+  <%% if <%= singular_table_name %>.errors.any? %>
+    <div id="error_explanation" class="card-panel red white-text">
+      <h5>Resolva os problemas a seguir antes de Salvar:</h5>
 
+      <ul>
+      <%% <%= singular_table_name %>.errors.full_messages.each do |message| %>
+        <li><%%= message %></li>
+      <%% end %>
+      </ul>
+    </div>
+  <%% end %>
 <div class="card-panel">
   
 <% attributes.each do |attribute| -%>
