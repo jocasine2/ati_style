@@ -29,7 +29,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
 
     if @<%= orm_instance.save %>
-      redirect_to @<%= singular_table_name %>, notice: <%= "'#{human_name} was successfully created.'" %>
+      redirect_to <%= plural_table_name %>_path, notice: <%= "'#{human_name} was successfully created.'" %>
     else
       render :new
     end
