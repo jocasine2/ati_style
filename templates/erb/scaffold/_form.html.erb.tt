@@ -1,27 +1,32 @@
-<%%= form_with(model: <%= model_resource_name %>) do |form| %>
-  <%%= render "error_messages", resource: form.object %>
+<%%= form_with(model: <%= model_resource_name %>) do |f| %>
+  <%%= render "error_messages", resource: f.object %>
 
 <div class="card-panel">
+  
 <% attributes.each do |attribute| -%>
-  <div class="row">
+<div class="row">
   <div class="input-field">
 <% if attribute.password_digest? -%>
-    <%%= form.label :password, class: "label" %>
-    <%%= form.password_field :password, class: "input" %>
+    <%%= f.password_field :password %>
+    <%%= f.label :password %>
   </div>
 
   <div class="input-field">
-    <%%= form.label :password_confirmation, class: "label" %>
-    <%%= form.password_field :password_confirmation, class: "input" %>
-<% else %>
-    <%%= form.label :<%= attribute.column_name %>, class: "label" %>
-    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: "input" %>
-<% end %>
-  </div>
-    </div>
-
+    <%%= f.password_field :password_confirmation %>
+    <%%= f.label :password_confirmation %>
+<% else -%>
+    <%- if attribute.reference? -%>
+    <%%= f.collection_select :<%= attribute.column_name %>, <%= attribute.name.camelize %>.all, :id, :name, prompt: true  %>
+    <% else %>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> %>
+    <%%= f.label :<%= attribute.column_name %> %>
+    <% end %>
 <% end -%>
   </div>
+  </div>
+
+<% end -%>
+</div>
   <div class="row">
               <div class="input-field col s12">
                 <button class="btn verde-to waves-effect waves-light right" type="submit" name="action">Salvar
