@@ -17,17 +17,6 @@ $(document).ready(function(){
       	} 
       });
 
-      $("#main-content a[href^='#']").click(function(e) {
-      	e.preventDefault();
-
-      	var position = $($(this).attr("href")).offset().top - 70.00;
-            console.log(position);
-
-      	$("body, html").animate({
-      		scrollTop: position
-      	}, 200 );
-      });
-
     });
 $(window).on('load', function(){
 	$(".dataTables_filter input").each(function(e){
