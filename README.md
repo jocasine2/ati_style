@@ -20,8 +20,9 @@ root to: 'controller#action'
 ```
 
 Rails generator
+```console
     $ rails g ati_style:install
-
+```
 
 ## Contributing
 
