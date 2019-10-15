@@ -1,10 +1,15 @@
-// require rails-ujs
-// require activestorage
-// require turbolinks
-// require_tree .
+//= require activestorage
+//= require materialize.min
+//= require plugins
+
 
 $(document).ready(function(){
-      // const swup = new Swup("swup");
+      $(".datatabled table").DataTable({
+            retrieve: true,
+            language: {
+                url: "/assets/datatable-ptbr.json"
+            }
+      });
       var pathname = window.location.pathname;
       var links_list = $("a.collapsible-body");
       links_list.each(function(e){
@@ -14,7 +19,7 @@ $(document).ready(function(){
       		$(this).parent().addClass("active");
       		$(this).parent().parent().parent().prop("style", "display: block;");
       		$(this).parent().parent().parent().parent().addClass("active").addClass("open");
-      	} 
+      	}
       });
 
     });

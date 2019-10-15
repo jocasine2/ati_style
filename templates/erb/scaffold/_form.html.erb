@@ -1,3 +1,6 @@
+<%% content_for :header do %>
+<%% end %>
+
 <%%= form_for(<%= singular_table_name %>) do |f| %>
   <%% if <%= singular_table_name %>.errors.any? %>
     <div id="error_explanation" class="card-panel red white-text">
@@ -38,8 +41,10 @@
 </div>
   <div class="row">
               <div class="input-field col s12">
-                <button class="btn verde-to waves-effect waves-light right" type="submit" name="action">Salvar
+                <button class="btn verde-to waves-effect waves-light right" type="submit" name="action"><i class="material-icons left">save</i>Salvar
                 </button>
               </div>
             </div>
+<%% end %>
+<%% content_for :footer do %>
 <%% end %>
