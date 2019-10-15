@@ -26,4 +26,4 @@ $ rails g ati_style:install
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at http://git.seplan.to.gov.br/jakson.moura/ati_style.
+Bug reports and pull requests are welcome on GitHub at http://git.ati.to.gov.br/jakson.moura/ati_style.
