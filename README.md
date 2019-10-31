@@ -1,5 +1,6 @@
 # AtiStyle
 By: Jakson Moura
+
 With help of: João Victor
 
 ## Instalação
@@ -7,7 +8,7 @@ With help of: João Victor
 Adicione esta linha no Gemfile:
 
 ```ruby
-gem 'ati_style', git: 'http://git.seplan.to.gov.br/jakson.moura/ati_style.git'
+gem 'ati_style', git: 'http://git.ati.to.gov.br/jakson.moura/ati_style.git'
 ```
 
 Execute:

@@ -65,33 +65,33 @@ $(function() {
    }, 300);
 
    // Collapsible navigation menu
-   $(".nav-collapsible .navbar-toggler").click(function() {
-      // Toggle navigation expan and collapse on radio click
-      if ($(".sidenav-main").hasClass("nav-expanded") && !$(".sidenav-main").hasClass("nav-lock")) {
-         $(".sidenav-main").toggleClass("nav-expanded");
-         $("#main").toggleClass("main-full");
-      } else {
-         $("#main").toggleClass("main-full");
-      }
-      // Set navigation lock / unlock with radio icon
-      if (
-         $(this)
-            .children()
-            .text() == "radio_button_unchecked"
-      ) {
-         $(this)
-            .children()
-            .text("radio_button_checked");
-         $(".sidenav-main").addClass("nav-lock");
-         $(".navbar .nav-collapsible").addClass("sideNav-lock");
-      } else {
-         $(this)
-            .children()
-            .text("radio_button_unchecked");
-         $(".sidenav-main").removeClass("nav-lock");
-         $(".navbar .nav-collapsible").removeClass("sideNav-lock");
-      }
-   });
+   // $(".nav-collapsible .navbar-toggler").click(function() {
+   //    // Toggle navigation expan and collapse on radio click
+   //    if ($(".sidenav-main").hasClass("nav-expanded") && !$(".sidenav-main").hasClass("nav-lock")) {
+   //       $(".sidenav-main").toggleClass("nav-expanded");
+   //       $("#main").toggleClass("main-full");
+   //    } else {
+   //       $("#main").toggleClass("main-full");
+   //    }
+   //    // Set navigation lock / unlock with radio icon
+   //    if (
+   //       $(this)
+   //          .children()
+   //          .text() == "radio_button_unchecked"
+   //    ) {
+   //       $(this)
+   //          .children()
+   //          .text("radio_button_checked");
+   //       $(".sidenav-main").addClass("nav-lock");
+   //       $(".navbar .nav-collapsible").addClass("sideNav-lock");
+   //    } else {
+   //       $(this)
+   //          .children()
+   //          .text("radio_button_unchecked");
+   //       $(".sidenav-main").removeClass("nav-lock");
+   //       $(".navbar .nav-collapsible").removeClass("sideNav-lock");
+   //    }
+   // });
 
    // Expand navigation on mouseenter event
    $(".sidenav-main.nav-collapsible, .navbar .brand-sidebar").mouseenter(function() {
