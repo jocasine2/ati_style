@@ -25,6 +25,11 @@ Rails generator
 $ rails g ati_style:install
 ```
 
+Para atualizar os assets
+```console
+$ rails g ati_style:update_assets
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at http://git.ati.to.gov.br/jakson.moura/ati_style.
