@@ -3,7 +3,7 @@
 
 <%%= form_for(<%= singular_table_name %>) do |f| %>
   <%% if <%= singular_table_name %>.errors.any? %>
-    <div id="error_explanation" class="card-panel red white-text">
+    <div id="error_explanation" class="card-panel">
       <h5>Resolva os problemas a seguir antes de Salvar:</h5>
 
       <ul>
@@ -17,8 +17,8 @@
   
 <% attributes.each do |attribute| -%>
 <div class="row">
-  <div class="input-field">
 <% if attribute.password_digest? -%>
+  <div class="input-field">
     <%%= f.password_field :password %>
     <%%= f.label :password %>
   </div>
@@ -28,8 +28,10 @@
     <%%= f.label :password_confirmation %>
 <% else -%>
     <%- if attribute.reference? -%>
+    <div class="select-field">
     <%%= f.collection_select :<%= attribute.column_name %>, <%= attribute.name.camelize %>.all, :id, :name, prompt: true  %>
     <% else %>
+    <div class="input-field">
     <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> %>
     <%%= f.label :<%= attribute.column_name %> %>
     <% end %>

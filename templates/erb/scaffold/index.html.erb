@@ -6,7 +6,7 @@
 
 <%% title "<%= plural_table_name.capitalize %>" %>
 <%% content_for :page_actions do %>
-<a href="<%%= url_for new_<%= singular_table_name %>_path %>" class="btn azul-to waves-effect waves-light breadcrumbs-btn right">
+<a href="<%%= url_for new_<%= singular_table_name %>_path %>" class="btn azul-to waves-effect waves-light right">
   <i class="material-icons left">add_circle</i>Cadastrar
 </a>
 <%% end %>
@@ -37,7 +37,7 @@
               </div>
               <a class="btn dropdown-settings dropdown-trigger btn-floating btn-small waves-effect waves-light breadcrumbs-btn right" href="#!" data-target="dropdown360"><i class="material-icons left">more_vert</i></a>
               <ul class="dropdown-content" id="dropdown360" tabindex="0" style="">  
-                <li tabindex="0"><a class="grey-text text-darken-2" href="<%%= url_for edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %>">Editar</a></li>
+                <li tabindex="0"><a class="grey-text text-darken-2" href="<%%= url_for edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %>">Alterar</a></li>
                 <li class="divider" tabindex="-1"></li>
                 <li tabindex="0" class="red darken-2"><a class="white-text sw-delete" href="#">Excluir <i class="material-icons left">delete</i></a></li>
               </ul>
