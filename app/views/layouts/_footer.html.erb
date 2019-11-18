@@ -10,8 +10,10 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'false' %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <!-- Outros -->
 <script src="/assets/application.js" type="text/javascript"></script>
 <script src="/assets/jquery-validation/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="/assets/toastr_custom.js"></script>
+<%= toastr_flash %>
 <%= yield(:footer) %>
