@@ -20,17 +20,13 @@ $(document).ready(function(){
 
 
       $("a").on('click', function(e){
-       e.preventDefault();
-       var goto = this.getAttribute("href");
-
-       if (goto != '#' && !goto.startsWith('#') && goto.length !== 0 && goto != "javascript:void(0);") {
-         $(".page-transition").addClass("active");
-         $("body").css("overflow", "hidden");
-         setTimeout(function(){
-          window.location = goto;
-        }, 1200);
-       }
-     });
+   e.preventDefault();
+   var goto = this.getAttribute("href");
+   if (goto != '#' && !goto.startsWith('#') && goto.length !== 0 && goto != "javascript:void(0);") {
+    $("body").addClass("active");
+    setTimeout(function(){ window.location = goto;}, 300);
+   }
+});
     });
 
 $(window).on('load', function(){
