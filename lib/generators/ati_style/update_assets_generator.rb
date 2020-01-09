@@ -13,6 +13,8 @@ module AtiStyle
         directory 'app/assets/javascripts/', 'app/assets/javascripts/'
         puts "Atualizando public...\n"
         directory 'public/', 'public/'
+        puts "Atualizando locales...\n"
+        directory 'locales/', 'config/locales/'
         puts "Atualizando templates scaffold...\n"
         directory 'templates/', 'lib/templates/'
       end

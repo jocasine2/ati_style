@@ -10,6 +10,8 @@ module AtiStyle
         puts "Copiando assets...\n"
         directory 'app/', 'app/'
         directory 'public/', 'public/'
+        puts "Copiando locales...\n"
+        directory 'locales/', 'config/locales/'
         puts "Copiando templates scaffold...\n"
         directory 'templates/', 'lib/templates/'
       end
