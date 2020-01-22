@@ -14,7 +14,7 @@ $(document).ready(function () {
 	$("a").on('click', function (e) {
 		e.preventDefault();
 		var goto = this.getAttribute("href");
-		if (goto != '#' && !goto.startsWith('#') && goto.length !== 0 && goto != "javascript:void(0);") {
+		if (goto != '#' && !goto.startsWith('#') && goto.length !== 0 && !goto.startsWith("javascript:void(")) {
 			$("body").addClass("active");
 			setTimeout(function () { window.location = goto; }, 300);
 		}
