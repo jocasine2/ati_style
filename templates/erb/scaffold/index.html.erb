@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col s12">
         <div class="card-panel">
-          <%% if !@<%= plural_table_name %>.preset? %>
+          <%% if !@<%= plural_table_name %>.present? %>
           <h6>Nenhum <%= singular_table_name %> cadastrado.</h6>
           <%% else %>
           <table class="card striped responsive-table">
