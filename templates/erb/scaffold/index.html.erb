@@ -1,92 +1,92 @@
 <%% content_for :header do %>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-<link rel="stylesheet" href="/assets/sweetalert/sweetalert.css">
-<%% end %>
-
-<%% title "<%= plural_table_name.capitalize %>" %>
-<%% content_for :page_actions do %>
-<a href="<%%= url_for new_<%= singular_table_name %>_path %>" class="btn azul-to waves-effect waves-light right">
-  <i class="material-icons left">add_circle</i>Cadastrar
-</a>
-<%% end %>
-<div class="row">
-  <div class="col s12">
-    <div class="card-panel">
-      <table class="card striped responsive-table">
-        <thead>
-          <tr>
-            <% attributes.reject(&:password_digest?).each do |attribute| -%>
-            <th><%= attribute.human_name %></th>
-            <% end -%>
-            <th>Ações</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
-          <tr>
-            <% attributes.reject(&:password_digest?).each_with_index do |attribute, index| -%>
-            <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
-            <% end -%>
-            <td>
-              <div class="table_hover_menu">
-                <ul>  
-                  <li class="waves-effect show_item"><a class="tooltipped" data-tooltip="Detalhar" data-position="top" href="<%%= url_for <%= singular_table_name %>_path(<%= singular_table_name %>) %>"><i class="material-icons">remove_red_eye</i></a></li>
-                </ul>
-              </div>
-              <a class="btn dropdown-settings dropdown-trigger btn-floating btn-small waves-effect waves-light breadcrumbs-btn right" href="#!" data-target="dropdown360"><i class="material-icons left">more_vert</i></a>
-              <ul class="dropdown-content" id="dropdown360" tabindex="0" style="">  
-                <li tabindex="0"><a class="grey-text text-darken-2" href="<%%= url_for edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %>">Alterar</a></li>
-                <li class="divider" tabindex="-1"></li>
-                <li tabindex="0" class="red darken-2"><a class="white-text sw-delete" href="#">Excluir <i class="material-icons left">delete</i></a></li>
-              </ul>
-            </td>
-          </tr>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+  <link rel="stylesheet" href="/assets/sweetalert/sweetalert.css">
+  <%% end %>
+  <%% title "<%= plural_table_name.capitalize %>" %>
+  <%% content_for :page_actions do %>
+    <a href="<%%= url_for new_<%= singular_table_name %>_path %>" class="btn azul-to waves-effect waves-light right">
+      <i class="material-icons left">add_circle</i>Cadastrar
+    </a>
+    <%% end %>
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <%% if !@<%= plural_table_name %>.preset? %>
+          <h6>Nenhum <%= singular_table_name %> cadastrado.</h6>
+          <%% else %>
+          <table class="card striped responsive-table">
+            <thead>
+              <tr>
+                <% attributes.reject(&:password_digest?).each do |attribute| -%>
+                  <th><%= attribute.human_name %></th>
+                <% end -%>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+              <tr>
+                <% attributes.reject(&:password_digest?).each_with_index do |attribute, index| -%>
+                  <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+                <% end -%>
+                <td>
+                  <div class="table_hover_menu">
+                    <ul>
+                      <li class="waves-effect show_item"><a class="tooltipped" data-tooltip="Detalhar" data-position="top" href="<%%= url_for <%= singular_table_name %>_path(<%= singular_table_name %>) %>"><i class="material-icons">remove_red_eye</i></a></li>
+                    </ul>
+                  </div>
+                  <a class="btn dropdown-settings dropdown-trigger btn-floating btn-small waves-effect waves-light breadcrumbs-btn right" href="#!" data-target="dropdown360"><i class="material-icons left">more_vert</i></a>
+                  <ul class="dropdown-content" id="dropdown360" tabindex="0" style="">
+                    <li tabindex="0"><a class="grey-text text-darken-2" href="<%%= url_for edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %>">Alterar</a></li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li tabindex="0" class="red darken-2"><a class="white-text sw-delete" href="#">Excluir <i class="material-icons left">delete</i></a></li>
+                  </ul>
+                </td>
+              </tr>
+              <%% end %>
+            </tbody>
+          </table>
           <%% end %>
-        </tbody>
-      </table>
-
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<%% content_for :footer do %>
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<script type="text/javascript">
-  $(document).ready(function (){
-    $('.sw-delete').click(function (e) {
-      e.preventDefault();
-
-      Swal.fire({
-        title: "Quer excluir o item?",
-        text: "Esta é uma ação que não tem volta!",
-        type: 'warning',
-        showCancelButton: true,
-        cancelButtonColor: '#999',
-        confirmButtonColor: '#d33',
-        cancelButtonText: 'Não excluir',
-        confirmButtonText: 'Sim, excluir item!',
-        reverseButtons: true,
-      }).then((result) => {
-        if (result) {
-          Swal.fire(
-                    'Excluído!',
-                    'O item foi excluído.',
-                    'success'
-                    )
-        } else {
-          Swal.fire({
-            title:'Excluído!',
-            text:'O item foi excluído.',
-            type: 'error'
+    <%% content_for :footer do %>
+      <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+      <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+      <script type="text/javascript">
+        $(document).ready(function (){
+          $('.sw-delete').click(function (e) {
+            e.preventDefault();
+        
+            Swal.fire({
+              title: "Quer excluir o item?",
+              text: "Esta é uma ação que não tem volta!",
+              type: 'warning',
+              showCancelButton: true,
+              cancelButtonColor: '#999',
+              confirmButtonColor: '#d33',
+              cancelButtonText: 'Não excluir',
+              confirmButtonText: 'Sim, excluir item!',
+              reverseButtons: true,
+            }).then((result) => {
+              if (result) {
+                Swal.fire(
+                          'Excluído!',
+                          'O item foi excluído.',
+                          'success'
+                          )
+              } else {
+                Swal.fire({
+                  title:'Excluído!',
+                  text:'O item foi excluído.',
+                  type: 'error'
+                })
+              }
+            });
+        
           })
-        }
-      });
-
-    })
-  });
-</script>
-<%% end %>
+        });
+      </script>
+      <%% end %>
