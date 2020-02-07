@@ -1,5 +1,5 @@
 toastr.options = {
-    "closeButton": true,
+    // "closeButton": true,
   "debug": true,
   "newestOnTop": false,
   "progressBar": true,
@@ -11,9 +11,9 @@ toastr.options = {
   "timeOut": "5000",
   "extendedTimeOut": "1000",
   "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "slideDown",
-  "hideMethod": "slideUp"
+  "hideEasing": "linear"
+  // "showMethod": "slideDown",
+  // "hideMethod": "slideUp"
   }
 
 // toastr.options.onShown = function() { console.log('hello'); }
