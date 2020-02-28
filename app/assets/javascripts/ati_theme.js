@@ -14,11 +14,40 @@ $(document).ready(function () {
 	$("a").on('click', function (e) {
 		e.preventDefault();
 		var goto = this.getAttribute("href");
-		if (goto != '#' && !goto.startsWith('#') && goto.length !== 0 && !goto.startsWith("javascript:void(")) {
+		if (goto == null) {return false;}
+		if (goto != '#' && !goto.startsWith('#') && goto.length !== 0 && goto != "javascript:void(0);") {
 			$("body").addClass("active");
 			setTimeout(function () { window.location = goto; }, 300);
 		}
 	});
+
+	$('label').each(function () {
+		$(this).html($(this).html().replace(/(\*)/g, '<span class="red-text">*</span>'));
+	});
+});
+
+
+$(window).on("resize", function(){
+	var wSize = $(this).width();
+	// Minimize only when it wasn't already
+	if (wSize < 1024 && sideMenuState() == "true") {
+		$("#main").addClass("main-full");
+		$(".nav-collapsible .navbar-toggler i").text("radio_button_unchecked");
+		$(".sidenav-main").removeClass("nav-lock");
+		$(".navbar .nav-collapsible").removeClass("sideNav-lock");
+		$(".sidenav-main.nav-collapsible, .navbar .nav-collapsible")
+			.addClass("nav-collapsed")
+			.removeClass("nav-expanded");
+	}
+	if (wSize > 1024 && sideMenuState() == "true") {
+		$(".sidenav-main.nav-collapsible, .navbar .nav-collapsible")
+			.addClass("nav-expanded")
+			.removeClass("nav-collapsed");
+		$("#main").removeClass("main-full");
+		$(".nav-collapsible .navbar-toggler i").text("radio_button_checked");
+		$(".sidenav-main").addClass("nav-lock");
+		$(".navbar .nav-collapsible").addClass("sideNav-lock");
+	}
 });
 
 $(window).on('load', function () {
@@ -66,14 +95,14 @@ $(window).on('load', function () {
 });
 
 function sideMenuState() {
-	if (localStorage.getItem('NOME_UNICO') == null) {
+	if (localStorage.getItem('sgd_menu_open') == null) {
 		var menu_open = $("a.navbar-toggler i").text() == "radio_button_checked";
-		localStorage.setItem('NOME_UNICO', menu_open);
+		localStorage.setItem('sgd_menu_open', menu_open);
 	}
-	return localStorage.getItem('NOME_UNICO');
+	return localStorage.getItem('sgd_menu_open');
 }
 
 function changeSideMenuState() {
 	var menu_open = $("a.navbar-toggler i").text() == "radio_button_checked";
-	localStorage.setItem('NOME_UNICO', menu_open);
+	localStorage.setItem('sgd_menu_open', menu_open);
 }
