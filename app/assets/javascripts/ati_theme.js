@@ -21,9 +21,6 @@ $(document).ready(function () {
 		}
 	});
 
-	$('label').each(function () {
-		$(this).html($(this).html().replace(/(\*)/g, '<span class="red-text">*</span>'));
-	});
 });
 
 

@@ -14,6 +14,8 @@ module AtiStyle
         directory 'locales/', 'config/locales/'
         puts "Copiando templates scaffold...\n"
         directory 'templates/', 'lib/templates/'
+        puts "Copiando initializers...\n"
+        directory 'initializers/', 'config/initializers/'
       end
 
     end
