@@ -13,7 +13,7 @@ module AtiStyle
         directory 'app/helpers/', 'app/helpers/'
         directory 'app/views/', 'app/views/'
         puts "Copiando javascript...\n"
-        if Rails::version:String.to_i < 6
+        if Rails::VERSION::STRING.to_i < 6
           directory 'app/assets/javascripts/', 'app/assets/javascripts/'
         else
           directory 'app/assets/javascripts/', 'app/javascripts/packs/'
