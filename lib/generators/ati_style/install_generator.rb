@@ -8,16 +8,16 @@ module AtiStyle
         puts " INICIANDO INSTALAÇÃO DO TEMPLATE"
         puts "==================================\n"
         puts "Copiando assets...\n"
-        directory 'app/assets/stylesheets', 'app/assets/stylesheets'
-        directory 'app/assets/vendors', 'app/assets/vendors'
-        directory 'app/assets/controllers', 'app/assets/controllers'
-        directory 'app/assets/helpers', 'app/assets/helpers'
-        directory 'app/assets/views', 'app/assets/views'
+        directory 'app/assets/stylesheets/', 'app/assets/stylesheets/'
+        directory 'app/assets/vendors/', 'app/assets/vendors/'
+        directory 'app/assets/controllers/', 'app/assets/controllers/'
+        directory 'app/assets/helpers/', 'app/assets/helpers/'
+        directory 'app/assets/views/', 'app/assets/views/'
         puts "Copiando javascript...\n"
         if Rails::version:String.to_i < 6
-          directory 'app/assets/javascripts', 'app/assets/javascripts'
+          directory 'app/assets/javascripts/', 'app/assets/javascripts/'
         else
-          directory 'app/assets/javascripts', 'app/javascripts/packs'
+          directory 'app/assets/javascripts/', 'app/javascripts/packs/'
         end
         directory 'public/', 'public/'
         puts "Copiando locales...\n"
