@@ -13,7 +13,7 @@
           <%% if !@<%= plural_table_name %>.present? %>
           <p class="center-align azul-to-text">Não há itens cadastrados.</p>
           <%% else %>
-          <table class="card striped responsive-table">
+          <table class="striped responsive-table">
             <thead>
               <tr>
                 <% attributes.reject(&:password_digest?).each do |attribute| -%>

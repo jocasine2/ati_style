@@ -7,16 +7,24 @@ module AtiStyle
         puts "=================================="
         puts " INICIANDO INSTALAÇÃO DO TEMPLATE"
         puts "==================================\n"
-        puts "Atualizando css...\n"
-        directory 'app/assets/stylesheets/', 'app/assets/stylesheets/'
-        puts "Atualizando js...\n"
-        directory 'app/assets/javascripts/', 'app/assets/javascripts/'
+        puts "Copiando assets...\n"
+        directory 'app/assets/stylesheets', 'app/assets/stylesheets'
+        directory 'app/assets/vendors', 'app/assets/vendors'
+        directory 'app/assets/helpers', 'app/assets/helpers'
+        directory 'app/assets/views', 'app/assets/views'
+        puts "Copiando javascript...\n"
+        if Rails::version:String.to_i < 6
+          directory 'app/assets/javascripts', 'app/assets/javascripts'
+        else
+          directory 'app/assets/javascripts', 'app/javascripts/packs'
+        end
         puts "Atualizando public...\n"
         directory 'public/', 'public/'
         puts "Atualizando locales...\n"
         directory 'locales/', 'config/locales/'
         puts "Atualizando templates scaffold...\n"
         directory 'templates/', 'lib/templates/'
+        
         puts "Copiando initializers...\n"
         directory 'initializers/', 'config/initializers/'
       end
