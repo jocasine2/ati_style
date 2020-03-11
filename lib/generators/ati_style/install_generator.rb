@@ -17,7 +17,7 @@ module AtiStyle
         if Rails::VERSION::STRING.to_i < 6
           directory 'app/assets/javascripts/', 'app/assets/javascripts/'
         else
-          directory 'app/assets/javascripts/', 'app/javascripts/packs/'
+          directory 'app/assets/javascripts/', 'app/javascript/packs/'
         end
         directory 'public/', 'public/'
         puts "Copiando locales...\n"
