@@ -10,9 +10,9 @@ module AtiStyle
         puts "Copiando assets...\n"
         directory 'app/assets/stylesheets/', 'app/assets/stylesheets/'
         directory 'app/assets/vendors/', 'app/assets/vendors/'
-        directory 'app/assets/controllers/', 'app/assets/controllers/'
-        directory 'app/assets/helpers/', 'app/assets/helpers/'
-        directory 'app/assets/views/', 'app/assets/views/'
+        directory 'app/controllers/', 'app/controllers/'
+        directory 'app/helpers/', 'app/helpers/'
+        directory 'app/views/', 'app/views/'
         puts "Copiando javascript...\n"
         if Rails::version:String.to_i < 6
           directory 'app/assets/javascripts/', 'app/assets/javascripts/'
