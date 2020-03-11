@@ -11,7 +11,7 @@ module ActionView
           else
             content = content_or_options
           end
-          if object.class != Ransack::search
+          if object.class != Ransack::Search
             if object.class.validators_on(method).map(&:class).include? ActiveRecord::Validations::PresenceValidator
                 if options.class != Hash
                   options =  {class: " required"}
