@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{}
   spec.description   = %q{}
-  spec.homepage      = "http://git.seplan.to.gov.br/jakson.moura/ati_style"
+  spec.homepage      = "http://git.ati.to.gov.br/jakson.moura/ati_style"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

@@ -29,7 +29,12 @@ Para atualizar os assets
 ```console
 $ rails g ati_style:update_assets
 ```
+## Configuração
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at http://git.ati.to.gov.br/jakson.moura/ati_style.
+No application.js adicione:
+```javascript
+//= require vendors.min
+//= require ati_theme
+//= require plugins
+//= require toastr_custom
+```

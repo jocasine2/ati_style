@@ -1,12 +1,18 @@
 ---
 pt-BR:
+  create: "Cadastrar"
+  edit: "Alterar"
+  index: "Listagem"
+  new: "Novo"
+  show: "Visualizar"
+  update: "Alterar"
   activerecord:
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
-          has_one: Não é possível excluir o registro pois existe um %{record} dependente
-          has_many: Não é possível excluir o registro pois existem %{record} dependentes
+          has_one: Não é possível excluir o item pois existe um %{record} dependente
+          has_many: Não é possível excluir o item pois existem %{record} dependentes
   date:
     abbr_day_names:
     - dom
@@ -79,7 +85,7 @@ pt-BR:
         one: menos de 1 segundo
         other: menos de %{count} segundos
       less_than_x_minutes:
-        one: menos de um minuto
+        one: menos de 1 minuto
         other: menos de %{count} minutos
       over_x_years:
         one: mais de 1 ano
@@ -100,19 +106,19 @@ pt-BR:
         one: 1 ano
         other: "%{count} anos"
     prompts:
-      second: Segundo
-      minute: Minuto
-      hour: Hora
-      day: Dia
-      month: Mês
-      year: Ano
+      second: segundo
+      minute: minuto
+      hour: hora
+      day: dia
+      month: mês
+      year: ano
   errors:
     format: "%{attribute} %{message}"
     messages:
       accepted: deve ser aceito
       blank: não pode ficar em branco
       confirmation: não é igual a %{attribute}
-      empty: não pode ficar vazio
+      empty: não pode ficar em branco
       equal_to: deve ser igual a %{count}
       even: deve ser par
       exclusion: não está disponível
@@ -142,15 +148,27 @@ pt-BR:
     template:
       body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
-        one: 'Não foi possível gravar %{model}: 1 erro'
-        other: 'Não foi possível gravar %{model}: %{count} erros'
+         one: 'Não foi possível salvar %{model}'
+        other: 'Não foi possível salvar %{model}'
+      # Upload de arquivos
+      carrierwave_processing_error: falhou quanto estava processado.
+      carrierwave_integrity_error: não é um tipo de arquivo permitido.
+      carrierwave_download_error: não pôde ser baixado.
+      extension_whitelist_error: "Não é permitido o envio de arquivos %{extension}, tipos permitidos: %{allowed_types}."
+      extension_blacklist_error: "Não é permitido o envio de arquivos %{extension}, tipos proibidos: %{prohibited_types}."
+      content_type_whitelist_error: "Não é permitido o envio de arquivos %{content_type}, tipos permitidos: %{allowed_types}."
+      content_type_blacklist_error: "Não é permitido o envio de arquivos %{content_type}."
+      rmagick_processing_error: "Falha na manipulação do arquivo, tem certeza que é uma image?. Erro original: %{e}"
+      mini_magick_processing_error: "Falha na manipulação do arquivo, tem certeza que é uma image? Erro original: %{e}"
+      min_size_error: "O tamanho do arquivo deve ser maior que %{min_size}."
+      max_size_error: "O tamanho do arquivo deve ser menor que %{max_size}."
   helpers:
     select:
       prompt: Por favor selecione
     submit:
-      create: Criar %{model}
-      submit: Salvar %{model}
-      update: Atualizar %{model}
+      create: Criar
+      submit: Salvar
+      update: Atualizar
   number:
     currency:
       format:
