@@ -1,66 +1,257 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Página não encontrada!</title>
+	<style>
+		.error500 .servers .server1:before, .error500 .servers .server1:after, .error500 .servers .server2:before, .error500 .servers .server2:after {
+  content: "";
+  position: absolute; }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+*, *:beffore, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+html, body {
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif; }
+		.error500 {
+  background: #FDD365;
+  position: relative; }
+  .error500 .info-text {
+    position: absolute;
+    top: 15vh;
+    width: 300px;
+    left: calc(60% - 150px);
+    color: rgba(0, 0, 0, 0.8);
+    z-index: 11;
+    opacity: 0;
+    animation-name: fadedown;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+    .error500 .info-text .error-code {
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 700; }
+    @media screen and (max-width: 600px) {
+      .error500 .info-text {
+        top: 25vh;
+        width: 80%;
+        left: 10%; } }
+    .error500 .info-text h1 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 35px; }
+    .error500 .info-text p:not(.error-code) {
+      font-weight: 400 !important;
+      font-size: 18px;
+      margin: 0; }
+      .error500 .info-text p:not(.error-code) a {
+        display: inline-block;
+        margin-top: 20px; }
+  .error500 .background {
+    background: url("images/500/bg.svg") no-repeat;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    left: 0;
+    background-position: bottom; }
+  .error500 .capi {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2; }
+    .error500 .capi .capi-body {
+      background: url("images/500/capi.svg") no-repeat;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      bottom: 0;
+      left: 0;
+      transform: translatex(100%);
+      background-size: 100%;
+      background-position: bottom;
+      z-index: 4;
+      animation-name: comeinright;
+      animation-duration: .3s;
+      animation-delay: .5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out; }
+    .error500 .capi .exclamation {
+      background: url("images/500/exclamation.svg") no-repeat;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      bottom: 0;
+      left: 0;
+      background-size: 100%;
+      background-position: bottom;
+      z-index: 3;
+      opacity: 0;
+      animation-name: exclamation;
+      animation-duration: .2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out; }
+  .error500 .servers {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: translatex(-100%);
+    z-index: 1;
+    animation-name: comeinleft;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+    .error500 .servers .server1 {
+      background: url("images/500/server1.svg") no-repeat;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      bottom: 0;
+      left: 0;
+      background-size: 100%;
+      background-position: bottom;
+      z-index: 2; }
+      .error500 .servers .server1:before, .error500 .servers .server1:after {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0; }
+      .error500 .servers .server1:before {
+        background: url("images/500/server1l1.svg") no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+        animation-name: poweroff;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out; }
+      .error500 .servers .server1:after {
+        background: url("images/500/server1l2.svg") no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+        animation-name: shutdown;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out; }
+    .error500 .servers .server2 {
+      position: absolute;
+      background: url("images/500/server2.svg") no-repeat;
+      width: 100vw;
+      height: 100vh;
+      bottom: 0;
+      left: 0;
+      background-size: 100%;
+      background-position: bottom;
+      z-index: -1; }
+      .error500 .servers .server2:before, .error500 .servers .server2:after {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0; }
+      .error500 .servers .server2:before {
+        background: url("images/500/server2l1.svg") no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+        animation-name: blink1;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; }
+      .error500 .servers .server2:after {
+        background: url("images/500/server2l2.svg") no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+        animation-name: blink2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; }
+@keyframes shutdown {
+  0% {
+    opacity: 1; }
+  4% {
+    opacity: 0; }
+  8% {
+    opacity: 1; }
+  12% {
+    opacity: 0; }
+  16% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes poweroff {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes blink1 {
+  0% {
+    opacity: 1; }
+  49% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+@keyframes blink2 {
+  0% {
+    opacity: 0; }
+  49% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+@keyframes exclamation {
+  0% {
+    transform: translatey(10%);
+    opacity: 0; }
+  100% {
+    transform: translatey(0%);
+    opacity: 1; } }
+@keyframes comeinright {
+  0% {
+    transform: translatex(100%); }
+  100% {
+    transform: translatex(0%); } }
+@keyframes comeinleft {
+  0% {
+    transform: translatex(-100%); }
+  100% {
+    transform: translatex(0%); } }
+@keyframes fadedown {
+  0% {
+    transform: translatey(-10%);
+    opacity: 0; }
+  100% {
+    transform: translatey(0%);
+    opacity: 1; } }
+	</style>
 </head>
+<body class="error500">
+	<div class="info-text">
+		<h1>Bem, não era pra isso acontecer...</h1>
+		<p class="error-code">Erro 500</p>
+		<p>Um erro ocorreu e já estamos trabalhando para corrigi-lo o mais breve possível.</p>
+	</div>
+	<div class="servers">
+		<div class="server1"></div>
+		<div class="server2"></div>
+	</div>
+	<div class="capi">
+		<div class="capi-body"></div>
+		<div class="exclamation"></div>
+	</div>
+	<div class="background"></div>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
 </body>
 </html>
