@@ -2,16 +2,16 @@
       <!-- Search for small screen-->
       <div class="container">
         <div class="row">
-          <div class="col s12 m6 l6 breadcrumbs-left">
+          <div class="col s12 l6 breadcrumbs-left">
             <h5 class="breadcrumbs-title mt-0 mb-0 display-inline"><%= yield :title %></h5>
-            <ol class="breadcrumbs mb-0 mt-1 hide-on-small-and-down">
+            <ol class="breadcrumbs mb-0 mt-1">
               <li class="breadcrumb-item"><a href="index.html">Início</a>
               </li>
               <li class="breadcrumb-item active"><%= yield :title %>
               </li>
             </ol>
           </div>
-          <div class="col s12 m6 l6 page-actions">
+          <div class="col s12 l6 page-actions">
             <%= yield :page_actions %>
           </div>
         </div>
