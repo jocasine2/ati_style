@@ -1,3 +1,3 @@
 module AtiStyle
-  VERSION = "0.5.12.9.4"
+  VERSION = "0.5.12.9.5"
 end

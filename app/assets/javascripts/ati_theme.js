@@ -20,6 +20,10 @@ $(document).ready(function () {
 			setTimeout(function () { window.location = goto; }, 300);
 		}
 	});
+	
+	$(window).bind("pageshow", function() {
+		M.updateTextFields();
+	});
 
 });
 
